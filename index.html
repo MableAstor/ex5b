@@ -47,7 +47,21 @@
 					return;
 			   }
 			   
-			   var t1;
+				var re = temconvers(t,u);
+			   
+			   alert("Temperature is "+re.tem+" in "+re.unit);
+			});
+		});
+		function alertvali() {
+			msg = "Please verify whether the temperature value is correct!!!";
+			alert(msg);
+		}
+		function alerttetm() {
+			msg = "Tempurature entered (in Celsius) must be between 0 and 100 C'";
+					alert(msg);
+		}
+		function temconvers(t,u) {
+			var t1;
 			   var u1;
 			   
 			   if(u == "F"){
@@ -60,17 +74,7 @@
 					t1 = t * (4/5);
 					u1 = "Kelvin";
 			   }
-			   
-			   alert("Temperature is "+t1+" in "+u1);
-			});
-		});
-		function alertvali() {
-			msg = "Please verify whether the temperature value is correct!!!";
-			alert(msg);
-		}
-		function alerttetm() {
-			msg = "Tempurature entered (in Celsius) must be between 0 and 100 C'";
-					alert(msg);
+			   return {tem:t1,unit:u1};
 		}
 	</script>
 </body>
